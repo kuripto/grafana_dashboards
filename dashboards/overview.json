@@ -1,0 +1,433 @@
+{
+  "uid": "p5-14OI4k",
+  "slug": "",
+  "title": "Overview",
+  "originalTitle": "",
+  "tags": [],
+  "style": "dark",
+  "timezone": "",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "panels": [
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 0 },
+      "id": 11,
+      "isNew": false,
+      "span": 0,
+      "title": "Panel Title",
+      "transparent": false,
+      "type": "timeseries",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "aptos_state_sync_version{type=\"synced\"}",
+          "legendFormat": "__auto"
+        }
+      ],
+      "options": {
+        "legend": { "calcs": [], "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 80 }
+            ]
+          },
+          "custom": {
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "showPoints": "auto",
+            "spanNulls": false,
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "lineStyle": { "fill": "" },
+            "scaleDistribution": { "type": "linear" },
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          }
+        }
+      }
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 0 },
+      "id": 4,
+      "isNew": false,
+      "span": 0,
+      "title": "Validator Connections",
+      "transparent": false,
+      "type": "timeseries",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "aptos_connections{role_type=\"validator\"}",
+          "legendFormat": "{{direction}}"
+        }
+      ],
+      "options": {
+        "legend": { "calcs": [], "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 80 }
+            ]
+          },
+          "custom": {
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "showPoints": "auto",
+            "spanNulls": false,
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "lineStyle": { "fill": "" },
+            "scaleDistribution": { "type": "linear" },
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          }
+        }
+      }
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 0 },
+      "id": 9,
+      "isNew": false,
+      "span": 0,
+      "title": "Panel Title",
+      "transparent": false,
+      "type": "timeseries",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "sum(aptos_network_peer_connected)",
+          "legendFormat": "__auto"
+        }
+      ],
+      "options": {
+        "legend": { "calcs": [], "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 80 }
+            ]
+          },
+          "custom": {
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "showPoints": "auto",
+            "spanNulls": false,
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "lineStyle": { "fill": "" },
+            "scaleDistribution": { "type": "linear" },
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          }
+        }
+      }
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 0 },
+      "id": 6,
+      "isNew": false,
+      "span": 0,
+      "title": "Panel Title",
+      "transparent": false,
+      "type": "stat",
+      "colors": null,
+      "colorValue": false,
+      "colorBackground": false,
+      "decimals": 0,
+      "format": "",
+      "gauge": {
+        "maxValue": 0,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": false
+      },
+      "nullPointMode": "",
+      "sparkline": {},
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "aptos_consensus_voting_power{account_address=\"c1f31446852220ffdf2fe294fd42fa5d7ced48c7d0f1378d6813ae8d972f1adf\"} / 1e8 - 1000000",
+          "legendFormat": "{{account_address}}"
+        }
+      ],
+      "thresholds": "",
+      "valueFontSize": "",
+      "valueMaps": null,
+      "valueName": "",
+      "options": {
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "displayMode": "",
+        "content": "",
+        "mode": "",
+        "reduceOptions": {
+          "values": false,
+          "fields": "",
+          "calcs": ["lastNotNull"]
+        }
+      }
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 6 },
+      "id": 2,
+      "isNew": false,
+      "span": 0,
+      "title": "Panel Title",
+      "transparent": false,
+      "type": "timeseries",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "aptos_consensus_voting_power{account_address=~\"e9f7d36334768683b85ec1df892dfd8fc389c8f6dbe0b890195d579a6e390c78|32f23e884c0c6f663997c7d4602ef0916bae15492833ee8e7266135e40ff8b14|85bec1dcb618004064ab52a594321e8f047bac53be8244c5d10ac136128e30f7|52b48fb6e6883d4cdf244cde8d7e972ea2d8ece9b5e484ed5085aacef0e306a1|447fc1fc130cf9245d9ca291785d0f8a00c3ebdc26b2e4c6165801b0af01c917|18a3ef480b7883d05b917873a8b6d5f5a5f763372b650242ede89836a67cdce8|d60280852b50c341b22bba06562a817293d7b834eac251e7600b25d8bdd9efa3|8d5c9e82d612c390b5dea347918b6421146bb638724854300eed065cc4211a6e|cf2a5df3737cd33344dc332416c35278431aed26ff684491b1bf7f9d19e3ee93|8e943e68e8e4a1ebb7e5a250b081af507d40e616283f38d2d2a2a4b6523c02ac|b840f1cfae5aaa4b50a11a6a23e2e859717e2f355fcd614592b219fc4d4e44a3|f08bb83cf89d299e4cddee7ef987b850a35a399900ba22860cc1553da3682a84|904bc056aa17a45c2715113e06cb42f5762581a7b839206f5348938db69425be|4cfeaf68aacfd0cd459c292837854ce058b9ba6c1cc35e8684b1a5030b1dc922|71debfa733376c4f2dc8970de8962931fe107c7dc1daad3bf189101bfd4adc4b|f2b6feeea4546648c257c7e33ff4f0aa8db3bb2949cca065c9db015478363458|925ec5ab56572964dc3cc69bb86c224367dbfc186f6831c26639f9428326c2b4|6a1d3313a58719cf5abc1aaee6b4b74bc7e2c69036a8a02f02eb4f3ab4a3d678|e1abb4ea11673aad3137052dce831eb20a1907815cb4a03ccac38ba7a9e988d3|ea733e480c379c61dae9cfb3f14a388f6a683d7a797c135f86b924fb7a2e8cdb|c1f31446852220ffdf2fe294fd42fa5d7ced48c7d0f1378d6813ae8d972f1adf|67af497cdd68361b18dda2409f244ebf6f776aee99094e16a5f371e39456de35|c067ce10f1faa4812fe608e2d4b3e1fe0bb629e91cfff532cccc23803a624414|483cf8942c76d86ed28a9849940abdea14952a551be84c38c844208e13d976d4|9dfeca70acb3e01328d9dbbda4a6c23913fcd81ef25f74fab52cb2e96b0a1486|dca6aaf410e984463b37e192652b3c09b0ae3968b3e0171bb076ae0e21112ef9|d2dc57e95669c9bf102cb5693fe8b2a8b10d330213d7ddd9fb417f86f183dc1d|4b2c524fc36698caf9d049b6088faa002cea3bbcbf5ed764f59768b4fe96efcf|302b69423fde5c7dd333ee50d48df16f076072e61f95e0f6db5685ee6c70d35b|bcb83e07eed46120a0143bd9861ea82495293228b9cd64cc43bda722edaeb7ad\"} / 1e8 - 1000000",
+          "legendFormat": "__auto"
+        }
+      ],
+      "options": {
+        "legend": { "calcs": [], "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 80 }
+            ]
+          },
+          "custom": {
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "showPoints": "auto",
+            "spanNulls": false,
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "lineStyle": { "fill": "" },
+            "scaleDistribution": { "type": "linear" },
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          }
+        }
+      }
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 17, "w": 12, "x": 12, "y": 6 },
+      "id": 5,
+      "isNew": false,
+      "span": 0,
+      "title": "Panel Title",
+      "transparent": false,
+      "type": "bargauge",
+      "options": {
+        "orientation": "horizontal",
+        "textMode": "",
+        "colorMode": "",
+        "graphMode": "",
+        "justifyMode": "",
+        "displayMode": "gradient",
+        "content": "",
+        "mode": "",
+        "reduceOptions": {
+          "values": false,
+          "fields": "",
+          "calcs": ["lastNotNull"]
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "aptos_consensus_voting_power{account_address=~\"e9f7d36334768683b85ec1df892dfd8fc389c8f6dbe0b890195d579a6e390c78|32f23e884c0c6f663997c7d4602ef0916bae15492833ee8e7266135e40ff8b14|85bec1dcb618004064ab52a594321e8f047bac53be8244c5d10ac136128e30f7|52b48fb6e6883d4cdf244cde8d7e972ea2d8ece9b5e484ed5085aacef0e306a1|447fc1fc130cf9245d9ca291785d0f8a00c3ebdc26b2e4c6165801b0af01c917|18a3ef480b7883d05b917873a8b6d5f5a5f763372b650242ede89836a67cdce8|d60280852b50c341b22bba06562a817293d7b834eac251e7600b25d8bdd9efa3|8d5c9e82d612c390b5dea347918b6421146bb638724854300eed065cc4211a6e|cf2a5df3737cd33344dc332416c35278431aed26ff684491b1bf7f9d19e3ee93|8e943e68e8e4a1ebb7e5a250b081af507d40e616283f38d2d2a2a4b6523c02ac|b840f1cfae5aaa4b50a11a6a23e2e859717e2f355fcd614592b219fc4d4e44a3|f08bb83cf89d299e4cddee7ef987b850a35a399900ba22860cc1553da3682a84|904bc056aa17a45c2715113e06cb42f5762581a7b839206f5348938db69425be|4cfeaf68aacfd0cd459c292837854ce058b9ba6c1cc35e8684b1a5030b1dc922|71debfa733376c4f2dc8970de8962931fe107c7dc1daad3bf189101bfd4adc4b|f2b6feeea4546648c257c7e33ff4f0aa8db3bb2949cca065c9db015478363458|925ec5ab56572964dc3cc69bb86c224367dbfc186f6831c26639f9428326c2b4|6a1d3313a58719cf5abc1aaee6b4b74bc7e2c69036a8a02f02eb4f3ab4a3d678|e1abb4ea11673aad3137052dce831eb20a1907815cb4a03ccac38ba7a9e988d3|ea733e480c379c61dae9cfb3f14a388f6a683d7a797c135f86b924fb7a2e8cdb|c1f31446852220ffdf2fe294fd42fa5d7ced48c7d0f1378d6813ae8d972f1adf|67af497cdd68361b18dda2409f244ebf6f776aee99094e16a5f371e39456de35|c067ce10f1faa4812fe608e2d4b3e1fe0bb629e91cfff532cccc23803a624414|483cf8942c76d86ed28a9849940abdea14952a551be84c38c844208e13d976d4|9dfeca70acb3e01328d9dbbda4a6c23913fcd81ef25f74fab52cb2e96b0a1486|dca6aaf410e984463b37e192652b3c09b0ae3968b3e0171bb076ae0e21112ef9|d2dc57e95669c9bf102cb5693fe8b2a8b10d330213d7ddd9fb417f86f183dc1d|4b2c524fc36698caf9d049b6088faa002cea3bbcbf5ed764f59768b4fe96efcf|302b69423fde5c7dd333ee50d48df16f076072e61f95e0f6db5685ee6c70d35b|bcb83e07eed46120a0143bd9861ea82495293228b9cd64cc43bda722edaeb7ad\"} / 1e8 - 1000000",
+          "legendFormat": "{{account_address}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "",
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 80 }
+            ]
+          },
+          "custom": {
+            "axisPlacement": "",
+            "barAlignment": 0,
+            "drawStyle": "",
+            "fillOpacity": 0,
+            "gradientMode": "",
+            "lineInterpolation": "",
+            "lineWidth": 0,
+            "pointSize": 0,
+            "showPoints": "",
+            "spanNulls": false,
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "lineStyle": { "fill": "" },
+            "scaleDistribution": { "type": "" },
+            "stacking": { "group": "", "mode": "" },
+            "thresholdsStyle": { "mode": "" }
+          }
+        }
+      }
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 15 },
+      "id": 7,
+      "isNew": false,
+      "span": 0,
+      "title": "Panel Title",
+      "transparent": false,
+      "type": "timeseries",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "sum by(instance) (aptos_consensus_voting_power)",
+          "legendFormat": "__auto"
+        }
+      ],
+      "options": {
+        "legend": { "calcs": [], "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 80 }
+            ]
+          },
+          "custom": {
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "showPoints": "auto",
+            "spanNulls": false,
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "lineStyle": { "fill": "" },
+            "scaleDistribution": { "type": "linear" },
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          }
+        }
+      }
+    }
+  ],
+  "rows": null,
+  "templating": { "list": [] },
+  "annotations": {
+    "list": [
+      {
+        "name": "Annotations \u0026 Alerts",
+        "datasource": { "type": "grafana", "uid": "-- Grafana --" },
+        "showLine": false,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "lineColor": "",
+        "iconSize": 0,
+        "enable": true,
+        "query": "",
+        "expr": "",
+        "step": "",
+        "textField": "",
+        "textFormat": "",
+        "titleFormat": "",
+        "tagsField": "",
+        "tags": null,
+        "tagKeys": "",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "refresh": "5s",
+  "schemaVersion": 37,
+  "version": 4,
+  "links": [],
+  "time": { "from": "now-12h", "to": "now" },
+  "timepicker": { "refresh_intervals": null, "time_options": null }
+}

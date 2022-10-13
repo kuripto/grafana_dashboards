@@ -112,7 +112,7 @@
             "hideFrom": { "legend": false, "tooltip": false, "viz": false },
             "lineStyle": { "fill": "" },
             "scaleDistribution": { "type": "linear" },
-            "stacking": { "group": "A", "mode": "none" },
+            "stacking": { "group": "A", "mode": "normal" },
             "thresholdsStyle": { "mode": "off" }
           }
         }
@@ -229,7 +229,61 @@
       "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "editable": false,
       "error": false,
-      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 6 },
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 6 },
+      "id": 13,
+      "isNew": false,
+      "span": 0,
+      "title": "Panel Title",
+      "transparent": false,
+      "type": "timeseries",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "rate(aptos_consensus_proposals_count[5m])",
+          "legendFormat": "__auto"
+        }
+      ],
+      "options": {
+        "legend": { "calcs": [], "displayMode": "list", "placement": "bottom" },
+        "tooltip": { "mode": "single" }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "",
+          "color": { "mode": "palette-classic" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 80 }
+            ]
+          },
+          "custom": {
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "showPoints": "auto",
+            "spanNulls": false,
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "lineStyle": { "fill": "" },
+            "scaleDistribution": { "type": "linear" },
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          }
+        }
+      }
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "editable": false,
+      "error": false,
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 6 },
       "id": 2,
       "isNew": false,
       "span": 0,
@@ -283,7 +337,7 @@
       "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "editable": false,
       "error": false,
-      "gridPos": { "h": 17, "w": 12, "x": 12, "y": 6 },
+      "gridPos": { "h": 18, "w": 6, "x": 12, "y": 6 },
       "id": 5,
       "isNew": false,
       "span": 0,
@@ -348,7 +402,7 @@
       "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "editable": false,
       "error": false,
-      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 15 },
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 12 },
       "id": 7,
       "isNew": false,
       "span": 0,
@@ -424,9 +478,9 @@
       }
     ]
   },
-  "refresh": "5s",
+  "refresh": "30s",
   "schemaVersion": 37,
-  "version": 4,
+  "version": 5,
   "links": [],
   "time": { "from": "now-12h", "to": "now" },
   "timepicker": { "refresh_intervals": null, "time_options": null }

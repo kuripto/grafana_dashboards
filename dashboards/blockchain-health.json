@@ -883,7 +883,7 @@
       "collapsed": false
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 42 },
@@ -898,7 +898,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "rate(aptos_proposer_collected_most_voting_power_sum{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$__rate_interval])/rate(aptos_proposer_collecting_round_count{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$__rate_interval])/aptos_total_voting_power{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}",
+          "expr": "rate(aptos_proposer_collected_most_voting_power_sum[$interval])/rate(aptos_proposer_collecting_round_count[$interval])/aptos_total_voting_power",
           "legendFormat": "__auto"
         }
       ],
@@ -938,7 +938,7 @@
       }
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 42 },
@@ -953,7 +953,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "rate(aptos_proposer_collected_conflicting_voting_power_sum{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$__rate_interval])/rate(aptos_proposer_collecting_round_count{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$__rate_interval])/aptos_total_voting_power{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}",
+          "expr": "rate(aptos_proposer_collected_conflicting_voting_power_sum[$interval])/rate(aptos_proposer_collecting_round_count[$interval])/aptos_total_voting_power",
           "legendFormat": "__auto"
         }
       ],
@@ -993,7 +993,7 @@
       }
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 16, "y": 42 },
@@ -1008,7 +1008,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "rate(aptos_proposer_collected_timeout_voting_power_sum{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$__rate_interval])/rate(aptos_proposer_collecting_round_count{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$__rate_interval])/aptos_total_voting_power{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}",
+          "expr": "rate(aptos_proposer_collected_timeout_voting_power_sum[$interval])/rate(aptos_proposer_collecting_round_count[$interval])/aptos_total_voting_power",
           "legendFormat": "__auto"
         }
       ],
@@ -1048,7 +1048,7 @@
       }
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": {},
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 50 },
@@ -1063,7 +1063,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "clamp_max(aptos_committed_votes_in_window{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"} + aptos_committed_proposals_in_window{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}, 1)",
+          "expr": "clamp_max(aptos_committed_votes_in_window + aptos_committed_proposals_in_window, 1)",
           "legendFormat": "__auto"
         }
       ],
@@ -1103,7 +1103,7 @@
       }
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": {},
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 50 },
@@ -1118,7 +1118,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "aptos_failed_proposals_in_window{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"} / clamp_min(aptos_failed_proposals_in_window{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"} + aptos_committed_proposals_in_window{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}, 1)",
+          "expr": "aptos_failed_proposals_in_window / clamp_min(aptos_failed_proposals_in_window + aptos_committed_proposals_in_window, 1)",
           "legendFormat": "__auto"
         }
       ],
@@ -1302,7 +1302,7 @@
       "collapsed": false
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": {},
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 68 },
@@ -1317,7 +1317,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "aptos_consensus_current_epoch_validators{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}",
+          "expr": "aptos_consensus_current_epoch_validators",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "format": "time_series"
         }
@@ -1359,7 +1359,7 @@
       }
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": {},
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 68 },
@@ -1374,7 +1374,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "aptos_total_voting_power{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}",
+          "expr": "aptos_total_voting_power",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "format": "time_series"
         }
@@ -1661,7 +1661,7 @@
       }
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": {},
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 16, "y": 85 },
@@ -1676,7 +1676,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "consensus_gauge{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\", op=\"sync_only\"}",
+          "expr": "consensus_gauge{op=\"sync_only\"}",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "format": "time_series"
@@ -1733,7 +1733,7 @@
       "collapsed": false
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": {},
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 0, "y": 94 },
@@ -1748,7 +1748,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "rate(aptos_consensus_proposals_count{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])",
+          "expr": "rate(aptos_consensus_proposals_count[$interval])",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "format": "time_series"
@@ -1791,7 +1791,7 @@
       }
     },
     {
-      "datasource": { "type": "prometheus", "uid": "${Datasource}" },
+      "datasource": {},
       "editable": false,
       "error": false,
       "gridPos": { "h": 8, "w": 8, "x": 8, "y": 94 },
@@ -1806,7 +1806,7 @@
         {
           "refId": "A",
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "rate(aptos_consensus_vote_nil_count{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[1m])",
+          "expr": "rate(aptos_consensus_vote_nil_count[1m])",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "format": "time_series"
@@ -1859,8 +1859,8 @@
         "datasource": null,
         "refresh": 2,
         "options": [
-          { "text": "1m", "value": "1m", "selected": false },
-          { "text": "10m", "value": "10m", "selected": true },
+          { "text": "5m", "value": "5m", "selected": true },
+          { "text": "10m", "value": "10m", "selected": false },
           { "text": "30m", "value": "30m", "selected": false },
           { "text": "1h", "value": "1h", "selected": false },
           { "text": "6h", "value": "6h", "selected": false },
@@ -1875,7 +1875,7 @@
         "allValue": "",
         "multi": false,
         "multiFormat": "",
-        "query": "1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
+        "query": "5m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
         "regex": "",
         "current": { "text": ["auto"], "value": "$__auto_interval_interval" },
         "label": "",
@@ -1886,6 +1886,25 @@
   },
   "annotations": {
     "list": [
+      {
+        "name": "Annotations \u0026 Alerts",
+        "datasource": { "type": "grafana", "uid": "-- Grafana --" },
+        "showLine": false,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "lineColor": "",
+        "iconSize": 0,
+        "enable": true,
+        "query": "",
+        "expr": "",
+        "step": "",
+        "textField": "",
+        "textFormat": "",
+        "titleFormat": "",
+        "tagsField": "",
+        "tags": null,
+        "tagKeys": "",
+        "type": "dashboard"
+      },
       {
         "name": "Annotations \u0026 Alerts",
         "datasource": { "type": "grafana", "uid": "-- Grafana --" },
@@ -1945,9 +1964,9 @@
       }
     ]
   },
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 37,
-  "version": 6,
+  "version": 3,
   "links": [
     {
       "title": "aptos-core",

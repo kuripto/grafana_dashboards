@@ -56,7 +56,7 @@
             "showPoints": "auto",
             "spanNulls": false,
             "hideFrom": { "legend": false, "tooltip": false, "viz": false },
-            "lineStyle": { "fill": "" },
+            "lineStyle": { "fill": "solid" },
             "scaleDistribution": { "type": "linear" },
             "stacking": { "group": "A", "mode": "none" },
             "thresholdsStyle": { "mode": "off" }
@@ -100,9 +100,10 @@
           },
           "custom": {
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 0,
+            "fillOpacity": 32,
             "gradientMode": "none",
             "lineInterpolation": "linear",
             "lineWidth": 1,
@@ -110,7 +111,7 @@
             "showPoints": "auto",
             "spanNulls": false,
             "hideFrom": { "legend": false, "tooltip": false, "viz": false },
-            "lineStyle": { "fill": "" },
+            "lineStyle": { "fill": "solid" },
             "scaleDistribution": { "type": "linear" },
             "stacking": { "group": "A", "mode": "normal" },
             "thresholdsStyle": { "mode": "off" }
@@ -270,7 +271,7 @@
             "showPoints": "auto",
             "spanNulls": false,
             "hideFrom": { "legend": false, "tooltip": false, "viz": false },
-            "lineStyle": { "fill": "" },
+            "lineStyle": { "fill": "solid" },
             "scaleDistribution": { "type": "linear" },
             "stacking": { "group": "A", "mode": "none" },
             "thresholdsStyle": { "mode": "off" }
@@ -324,7 +325,7 @@
             "showPoints": "auto",
             "spanNulls": false,
             "hideFrom": { "legend": false, "tooltip": false, "viz": false },
-            "lineStyle": { "fill": "" },
+            "lineStyle": { "fill": "solid" },
             "scaleDistribution": { "type": "linear" },
             "stacking": { "group": "A", "mode": "none" },
             "thresholdsStyle": { "mode": "off" }
@@ -470,12 +471,31 @@
         "tags": null,
         "tagKeys": "",
         "type": "dashboard"
+      },
+      {
+        "name": "Annotations \u0026 Alerts",
+        "datasource": { "type": "grafana", "uid": "-- Grafana --" },
+        "showLine": false,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "lineColor": "",
+        "iconSize": 0,
+        "enable": true,
+        "query": "",
+        "expr": "",
+        "step": "",
+        "textField": "",
+        "textFormat": "",
+        "titleFormat": "",
+        "tagsField": "",
+        "tags": null,
+        "tagKeys": "",
+        "type": "dashboard"
       }
     ]
   },
   "refresh": "30s",
   "schemaVersion": 37,
-  "version": 1,
+  "version": 3,
   "links": [],
   "time": { "from": "now-12h", "to": "now" },
   "timepicker": { "refresh_intervals": null, "time_options": null }
